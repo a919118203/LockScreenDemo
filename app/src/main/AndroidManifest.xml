@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lockscreendemo">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--新起一个栈可以防止拉起锁屏activity的时候把整个App都拉起了
+            autoRemoveFromRecents可以使这个activity不显示在历史任务列表中-->
+        <activity android:name=".LockScreenActivity"
+            android:taskAffinity="@string/float_activity_task"
+            android:autoRemoveFromRecents="true"
+            android:launchMode="singleTask"
+            android:theme="@style/TransparentBackgroundTheme"/>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

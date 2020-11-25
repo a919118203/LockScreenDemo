@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LockScreenDemo</string>
+    <string name="float_activity_task">com.example.lockscreendemo.otheractivitytask</string>
+</resources>
